@@ -2,243 +2,227 @@
 <html>
 <head>
   <title>Oilfield Sports Association</title>
-  <link rel="shortcut icon" type="image/png" href="images/phantomsicon.png"/>
-  <link rel="apple-touch-icon" href="images/phantomsapplefav.png"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="images/phantomsicon.png"/>
+    <link rel="apple-touch-icon" href="images/phantomsapplefav.png"/>
+<meta name="viewport" conten="width=device-width, initial-scale=1.0">
+
 <style>
+
+/* GETS RID OF ANY RESIDUAL CSS THAT PREVENTS THE LISTS FROM BEING ALIGNED */
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: Verdana;
+
 }
 
 html {
   background-color: #232323;
   max-width: 1300px;
-  margin: 0 auto;
+
+  /* REMOVE IF NOTHING GOES WRONG: margin: 0 auto; */
 }
 
-.heading {
-  float: center;
-  background-color: #232323;
-  padding: 15px;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-
-}
-
-
-.menu {
-  float: left;
-  width: 22%;
-  text-align: right;
-}
-
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
-.menuitem {
-  padding: 8px;
-  margin-top: 7px;
-  color: #FC7223;
-  font-size: 25px;
+a {
+  text-decoration: none;
   font-weight: bold;
-  /*border-bottom: 1px solid #000000;*/
 }
-.main {
+
+ul {
+  list-style: none;
+}
+
+h3 {
+  padding: 3;
+}
+
+h3:hover {
+  background-color: #ddd;
+}
+
+/* THE LOGO AREA AT THE TOP */
+.banner {
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.leftMenu {
+  float: left;
+  width: 25%;
+  text-align: right;
+  color: #FC7223;
+  line-height: 1.8;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.leftMenuHeading a {
+  color: #FC7223;
+
+  /* TO MAKE THE BACKGROUND HIGHLIGHT COVER ENOUGH AREA */
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 3px;
+}
+
+.leftMenuDropdown {
+  display: none;
+  line-height: 1.2;
+  font-size: 25px;
+}
+
+.leftMenuCurrentPage {
+  display:block;
+  line-height: 1.2;
+  font-size: 25px;
+  color: white;
+}
+
+.leftMenuCurrentSport a {
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 3px;
+  color: white;
+}
+
+.whiteBackground {
+  background-color: #ddd;
+  color: black !important;
+}
+
+.leftMenuDropdown a {
+  color: white;
+}
+
+.leftMenuHeading:hover > .leftMenuDropdown, .active{
+  display: block;
+}
+
+
+.leftMenuList li:hover > a {
+  background-color: #ddd;
+  color: black;
+}
+
+
+
+.content {
   color: #f1f1f1;
   float: left;
   width: 50%;
-  padding: 0 20px;
-  overflow: hidden;
   line-height: 1.4;
-  text-align: justify;
-  /*max-width: 800px;*/
+  padding: 23px;
 }
-.right {
+
+.content p {
+  margin-bottom: 1em;
+  text-align: justify;
+}
+
+.content h2 {
+  margin-bottom: .5em;
+}
+
+.rightMenu {
   background-color: #FC7223;
   float: left;
-  width: 28%;
+  width: 25%;
   padding: 10px 15px;
-  font-size: 15px;
+  font-size: 20px;
   margin-top: 7px;
+
 }
 
-.mainright {
-  float:left;
-  width: 70%;
+.rightMenu a {
+  color: black;
+  text-decoration: none;
+  list-style: none;
 }
 
-.mainleft {
-  float: left;
-  width: 30%;
+.rightMenuHeading {
+  padding: 4px;
 }
 
 @media only screen and (max-width:800px) {
-  /* For tablets: */
-  .menu {
-    width: 100%;
-    text-align: center;
-  }
-  .main {
-    width: 100%;
-    padding: 20px;
-  }
-  .right {
-    width: 100%;
-  }
-  .navbar-list {
-    text-align: center;
-
-  }
-}
-@media only screen and (max-width:500px) {
-  /* For mobile phones: */
-  .menu, .main, .right, .mainleft, .mainright {
-    width: 100%;
-  }
+/* For tablets: */
+.leftMenu, .content, .rightMenu {
+  width: 100%;
 }
 
-
-.dropdown {
-  display: none;
-  /*color: #330000;*/
-}
-/*
-.navbar-tags {
-    color: #003300;
-}*/
-
-.footer {
-  color: grey;
-}
-
-.navbar-tags:hover > .dropdown, .active {
-    /*display block is essential for the dropdown*/
-  display: block;
-  text-decoration: none;
-}
-
-
-.navbar-list a {
-  /*color: #FC7223;*/
-  font-size: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 3px;
-  text-align: right;
-}
-
-
-/*
-.navbar-tags {
-  margin: 20px;
-}
-*/
-.navbar-tags, .dropdown {
-  padding: 0;
-  list-style-type: none;
-}
-
-.navbar-list li:hover > a {background-color: #ddd; color: #000000}
-
-.toplevel {
-  color: #FC7223;
-  line-height: 1.8;
-}
-
-.secondlevel {
-  color: white;
-}
-  
-  h2 {
+.leftMenu, .rightMenu {
   text-align: center;
-  }
+}
+
+}
+
+/* MAKES THE COLOR CHANGE AFFECT THE PARENT AS WELL
+.leftMenu li:hover > a {
+  background-color: #ddd;
+  color: black;
+}*/
 
 </style>
 </head>
-<body style="font-family:Verdana;">
 
-<div style="background-color:#232323;padding:15px;">
-  <div class="heading">
-  <img src="images/phantoms.png" style="width:100%; max-width:600px;">
-  <!--  <h1>Cinque Terre</h1>
-  <h3>Resize the browser window</h3> -->
+<body>
+
+
+<!--THE LOGO AREA AT THE TOP-->
+<div class="banner">
+  <a href="index.html"><picture><source srcset="images/phantoms.png" media="(min-width: 750px)"><source srcset="images/phantoms@0.5x.png" media="(min-width: 450px)"><img src="images/phantoms@0.25x.png" alt="phantoms logo" class="banner"></picture></a>
 </div>
 
-<div style="overflow:auto;">
-  <div class="menu">
-
-
-
-    <ul class="navbar-list">
-      <li class="navbar-tags">
-        <a href="#" class="toplevel">HOCKEY</a>
-        <ul class="dropdown">
-          <li><a href="" class="secondlevel">Register</a></li>
-          <li><a href="" class="secondlevel">About</a></li>
-          <li><a href="" class="secondlevel">Schedule</a></li>
-        </ul>
+<div class="leftMenu">
+  <ul class="leftMenuList">
+    <li class="leftMenuHeading"><a href="#">HOCKEY</a>
+      <ul class="leftMenuDropdown">
+        <li><a href="">Register</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Schedule</a></li>
+        <li><a href="mailto:oilfieldsphantoms@gmail.com">Contact</a></li>
+      </ul>
       </li>
-      <li class="navbar-tags">
-        <a href="#" class="toplevel">SOCCER</a>
-        <ul class="dropdown">
-          <li><a href="" class="secondlevel">Register</a></li>
-          <li><a href="" class="secondlevel">About</a></li>
-          <li><a href="" class="secondlevel">Schedule</a></li>
-        </ul>
-      </li>
-      <li class="navbar-tags">
-        <a href="#" class="toplevel">BASEBALL</a>
-        <ul class="dropdown">
-          <li><a href="" class="secondlevel">Register</a></li>
-          <li><a href="" class="secondlevel">About</a></li>
-          <li><a href="" class="secondlevel">Schedule</a></li>
-        </ul>
-      </li>
-    </ul>
+    <li  class="leftMenuCurrentSport"><a href="#" class="whiteBackground">SOCCER</a>
+      <ul class="leftMenuCurrentPage">
+        <li><a href="">Register</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Schedule</a></li>
+        <li><a href="mailto:oilfieldsoccer@gmail.com">Contact</a></li>
+      </ul>
+    </li>
+    <li  class="leftMenuHeading"><a href="#">BASEBALL</a>
+      <ul class="leftMenuDropdown">
+        <li><a href="">Register</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Schedule</a></li>
+        <li><a href="mailto:oilfieldbaseball@gmail.com">Contact</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
 
-  </div>
-
-  <div class="main">
-    <h2>Oilfield Sports Association</h2>
-    <p>Oilfields Sports Association is located in the Foothills in Alberta, Canada. Through the Association, kids from the local communities of Turner Valley, Black Diamond, Millarville, Longview and Okotoks participate in soccer, baseball, and pond hockey. The Association & its volunteers focus on participation and encouragement over winning, and are committed to helping the players develop their skills and teamwork through games against other teams.</p>
-    <h2>Mission Statement:</h2>
-    <p>To provide fun, affordable recreation programs for youth within our communities and surrounding areas</p>
-    <p>U-14 is for players born in
-
-      <script>document.write(new Date().getFullYear()-14);</script>
-
-      and later.
-    </p>
-
-<div class ="mainleft">
-<p align="left">
-<a href="mailto:oilfieldsoccer@gmail.com">Soccer</a>
-</p>
+<div class="content">
+  <h2>Oilfields Sports Association</h2>
+  <p>Oilfields Sports Association is located in the Foothills in Alberta, Canada. Through the Association, kids from the local communities of Turner Valley, Black Diamond, Millarville, Longview and Okotoks participate in soccer, baseball, and pond hockey. The Association & its volunteers focus on participation and encouragement over winning, and are committed to helping the players develop their skills and teamwork through games against other teams.</p>
+  <h2>Mission Statement</h2>
+  <p>To provide fun, affordable recreation programs for youth within our communities and surrounding areas.</p>
 </div>
 
 
+<div class="rightMenu">
+  <h3 class="rightMenuHeading"><a href="">Contact Information</a></h3>
+  <h3 class="rightMenuHeading"><a href="">Financial Assistance</a></h3>
+  <h3 class="rightMenuHeading"><a href="">Policies and Bylaws</a></h3>
 
-  </div>
-
-  <div class="right">
-    <h2>Contact Information</h2>
-    <h2>Financial Assistance</h2>
-    <h2>Policies and Bylaws</h2>
-  </div>
 </div>
-
-<div class="footer">
-<span>
-  <script>document.write(new Date().getFullYear()-7);</script>
-  &copy;<script>document.write(new Date().getFullYear());</script> Company Name
-</span>
-<div class="footer">
 
 </body>
+
+
+
+
 </html>
