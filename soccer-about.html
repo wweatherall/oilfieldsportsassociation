@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Oilfield Sports Association</title>
+    <link href="style.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="images/phantomsicon.png"/>
+    <link rel="apple-touch-icon" href="images/phantomsapplefav.png"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+/* GETS RID OF ANY RESIDUAL CSS THAT PREVENTS THE LISTS FROM BEING ALIGNED */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Verdana;
+
+}
+
+html {
+  background-color: #232323;
+  max-width: 1300px;
+
+  /* REMOVE IF NOTHING GOES WRONG: margin: 0 auto; */
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+ul {
+  list-style: none;
+}
+
+h3 {
+  padding: 3;
+}
+
+h3:hover {
+  background-color: #ddd;
+}
+
+/* THE LOGO AREA AT THE TOP */
+.banner {
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.leftMenu {
+  float: left;
+  width: 25%;
+  text-align: right;
+  color: #FC7223;
+  line-height: 1.8;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.leftMenuHeading a {
+  color: #FC7223;
+
+  /* TO MAKE THE BACKGROUND HIGHLIGHT COVER ENOUGH AREA */
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 3px;
+}
+
+.leftMenuDropdown {
+  display: none;
+  line-height: 1.2;
+  font-size: 25px;
+}
+
+.leftMenuCurrentPage {
+  display:block;
+  line-height: 1.2;
+  font-size: 25px;
+  color: white;
+}
+
+.leftMenuCurrentSport a {
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 3px;
+  color: white;
+}
+
+.whiteBackground {
+  background-color: #ddd;
+  color: black !important;
+}
+
+.leftMenuDropdown a {
+  color: white;
+}
+
+.leftMenuHeading:hover > .leftMenuDropdown, .active{
+  display: block;
+}
+
+
+.leftMenuList li:hover > a {
+  background-color: #ddd;
+  color: black;
+}
+
+
+
+.content {
+  color: #f1f1f1;
+  float: left;
+  width: 50%;
+  line-height: 1.4;
+  padding: 23px;
+}
+
+.content p {
+  margin-bottom: 1em;
+  text-align: justify;
+}
+
+.content h2 {
+  margin-bottom: .5em;
+}
+
+.contentLeft {
+  width: calc((100% - 260px));
+  min-width: 100px;
+  max-width: 100%;
+  float: left;
+}
+
+.contentLeft p {
+    text-align: left;
+    font-size: 11pt;
+}
+
+.contentRight {
+  width: 250px;
+  float: right;
+  padding-left: auto;
+}
+
+.contentRight h3:hover{
+  background-color: inherit;
+
+}
+
+.rightMenu {
+  background-color: #FC7223;
+  float: left;
+  width: 25%;
+  padding: 10px 15px;
+  font-size: 20px;
+  margin-top: 7px;
+
+}
+
+.rightMenu a {
+  color: black;
+  text-decoration: none;
+  list-style: none;
+}
+
+.rightMenuHeading {
+  padding: 4px;
+}
+
+
+input[type='checkbox'] { display: none; }
+
+.wrap-collabsible { margin: 1.2rem 0; }
+
+.lbl-toggle { display: block; font-weight: bold; font-family: sans-serif; font-weight: bold; font-size: 18pt; text-transform: uppercase; text-align: center; padding: 1rem; color: black; background: #FC7223; cursor: pointer; border-radius: 0px; transition: all 0.25s ease-out; }
+
+.lbl-toggle:hover { color: #FFF; }
+
+.lbl-toggle::before { content: ' '; display: inline-block; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 5px solid currentColor; vertical-align: middle; margin-right: .7rem; transform: translateY(-2px); transition: transform .2s ease-out; }
+
+.toggle:checked+.lbl-toggle::before { transform: rotate(90deg) translateX(-3px); } .collapsible-content { max-height: 0px; overflow: hidden; transition: max-height .25s ease-in-out; }
+
+.toggle:checked + .lbl-toggle + .collapsible-content { max-height: 9000px; }
+
+.toggle:checked+.lbl-toggle { border-bottom-right-radius: 0; border-bottom-left-radius: 0; } .collapsible-content
+
+.content-inner {color: white; font-size: 10pt; background: #444444; border-bottom: 1px solid #000000; border-bottom-left-radius: 0px; border-bottom-right-radius: 0px; padding: .5rem 1rem; }
+
+.content-inner ul {list-style: square; margin-left: 10px;}
+
+.content-inner li {margin-bottom: 10px;}
+
+.content-inner em {font-size: 12pt;}
+
+.collapsible-content p { margin-bottom: 0; }
+
+.contentInnerButton {
+  margin: auto;
+  width: 80%;
+  background-color: #FC7223;
+  text-align: center;
+  color: black;
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 13pt;
+}
+
+.contentInnerButton:hover {
+  background-color: #ddd;
+}
+
+
+@media only screen and (max-width:800px) {
+/* For tablets: */
+.leftMenu, .content, .rightMenu {
+  width: 100%;
+}
+
+.leftMenu, .rightMenu {
+  text-align: center;
+}
+
+}
+
+@media only screen and (max-width:500px) {
+/* For tablets: */
+.leftMenu, .content, .rightMenu, .contentLeft, .contentRight {
+  width: 100%;
+}
+
+.leftMenu, .rightMenu {
+  text-align: center;
+}
+
+}
+
+/* MAKES THE COLOR CHANGE AFFECT THE PARENT AS WELL
+.leftMenu li:hover > a {
+  background-color: #ddd;
+  color: black;
+}*/
+
+</style>
+</head>
+
+<body>
+
+
+<!--THE LOGO AREA AT THE TOP-->
+<div class="banner">
+  <a href="index.html"><picture><source srcset="images/phantoms600.png" media="(min-width: 400px)"><img src="images/phantoms@0.25x.png" alt="phantoms logo" width="600" class="banner"></picture></a>
+</div>
+
+<div class="leftMenu">
+  <ul class="leftMenuList">
+    <li class="leftMenuHeading"><a href="#">HOCKEY</a>
+      <ul class="leftMenuDropdown">
+        <li><a href="">Register</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Schedule</a></li>
+        <li><a href="mailto:oilfieldsphantoms@gmail.com">Contact</a></li>
+      </ul>
+      </li>
+    <li  class="leftMenuCurrentSport"><a href="#" class="whiteBackground">SOCCER</a>
+      <ul class="leftMenuCurrentPage">
+        <li><a href="">Register</a></li>
+        <li><a href="soccer-about.html">About</a></li>
+        <li><a href="soccer-schedule.html">Schedule</a></li>
+        <li><a href="mailto:oilfieldsoccer@gmail.com">Contact</a></li>
+      </ul>
+    </li>
+    <li  class="leftMenuHeading"><a href="#">BASEBALL</a>
+      <ul class="leftMenuDropdown">
+        <li><a href="">Register</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Schedule</a></li>
+        <li><a href="mailto:oilfieldbaseball@gmail.com">Contact</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div class="content">
+
+<center><h2>About</h2></center>
+
+<div class="wrap-collabsible"> <input id="collapsible1" class="toggle" type="checkbox"> <label for="collapsible1" class="lbl-toggle">U5</label><div class="collapsible-content"><div class="content-inner">
+  <ul>
+    <p><em>U-5 is for players born in
+
+      <script>document.write(new Date().getFullYear()-5);</script>
+
+      and later.</em></p>
+    <br>
+    <li>Runs from the end of April to the third week of June. Practices may commence earlier</li>
+    <li><strong>TRAVEL IS REQUIRED</strong>. (Including Vulcan, Nanton, Red Deer Lake, High River, Millarville, &amp; Okotoks)</li>
+    <li>Home games/practices are played at C. Ian McLaren in Black Diamond.</li>
+    <li>1 game per week and 1 practice at the discretion of coach/team.</li>
+    <li> Games typically are Tuesday at 6:30pm (refer to team schedule).</li>
+    <li>Game length: 2 x 25-minute halves.</li>
+    <li>Seven players per side (7v7) with a designated keeper. Size 4 ball.</li>
+    <li><strong>Shin pads and appropriate soccer shoes are required</strong>.</li>
+    <li>Part of High Country League and follows The High Country League Code of Conduct.</li>
+    <li>Referees will be provided – coaches may also be on the field to help instruct players in the case where there is no outside referee, one coach from each team is on the field refereeing/coaching/directing players</li>
+    <li>Parents encourage from the sidelines – leave the coaching/directing to the coaches and referees</li>
+  </ul>
+ &nbsp;
+<br>
+<h2>Skills Developed in the U9 Age Group</h2>
+<ul>
+  <li>Dribbling the ball (changes of speed and direction)</li>
+  <li>Stopping the ball (bottom, inside and outside of the foot)</li>
+  <li>Passing with inside and outside of foot</li>
+  <li>Proper throw-ins</li>
+  <li>Shooting</li>
+  <li>Feints to lose a defender (will be taught at coaches’ clinic)</li>
+  <li>Shielding a ball</li>
+  <li>Crossing a soccer ball</li>
+  <li>Defending</li>
+  <li>Following rules of the game</li>
+</ul>
+<br>
+<br>
+<div class="contentInnerButton">
+<br>Register - Fee $110<br><br>
+</div>
+<br>
+</div></div></div>
+
+
+<div class="wrap-collabsible"> <input id="collapsible2" class="toggle" type="checkbox"> <label for="collapsible2" class="lbl-toggle">U7</label><div class="collapsible-content"><div class="content-inner">
+  <ul>
+    <p><em>U-7 is for players born in
+
+      <script>document.write(new Date().getFullYear()-7);</script>
+
+      and <script>document.write(new Date().getFullYear()-6);</script>.</em></p>
+    <br>
+    <li>Runs from the end of April to the third week of June. Practices may commence earlier</li>
+    <li><strong>TRAVEL IS REQUIRED</strong>. (Including Vulcan, Nanton, Red Deer Lake, High River, Millarville, &amp; Okotoks)</li>
+    <li>Home games/practices are played at C. Ian McLaren in Black Diamond.</li>
+    <li>1 game per week and 1 practice at the discretion of coach/team.</li>
+    <li> Games typically are Tuesday at 6:30pm (refer to team schedule).</li>
+    <li>Game length: 2 x 25-minute halves.</li>
+    <li>Seven players per side (7v7) with a designated keeper. Size 4 ball.</li>
+    <li><strong>Shin pads and appropriate soccer shoes are required</strong>.</li>
+    <li>Part of High Country League and follows The High Country League Code of Conduct.</li>
+    <li>Referees will be provided – coaches may also be on the field to help instruct players in the case where there is no outside referee, one coach from each team is on the field refereeing/coaching/directing players</li>
+    <li>Parents encourage from the sidelines – leave the coaching/directing to the coaches and referees</li>
+  </ul>
+ &nbsp;
+<br>
+<h2>Skills Developed in the U9 Age Group</h2>
+<ul>
+  <li>Dribbling the ball (changes of speed and direction)</li>
+  <li>Stopping the ball (bottom, inside and outside of the foot)</li>
+  <li>Passing with inside and outside of foot</li>
+  <li>Proper throw-ins</li>
+  <li>Shooting</li>
+  <li>Feints to lose a defender (will be taught at coaches’ clinic)</li>
+  <li>Shielding a ball</li>
+  <li>Crossing a soccer ball</li>
+  <li>Defending</li>
+  <li>Following rules of the game</li>
+</ul>
+<br>
+<br>
+<div class="contentInnerButton">
+<br>Register - Fee $110<br><br>
+</div>
+<br>
+</div></div></div>
+
+
+<div class="wrap-collabsible"> <input id="collapsible3" class="toggle" type="checkbox"> <label for="collapsible3" class="lbl-toggle">U9</label><div class="collapsible-content"><div class="content-inner">
+  <ul>
+    <p><em>U-9 is for players born in
+
+      <script>document.write(new Date().getFullYear()-9);</script>
+
+      and <script>document.write(new Date().getFullYear()-8);</script>.</em></p>
+    <br>
+    <li>Runs from the end of April to the third week of June. Practices may commence earlier</li>
+    <li><strong>TRAVEL IS REQUIRED</strong>. (Including Vulcan, Nanton, Red Deer Lake, High River, Millarville, &amp; Okotoks)</li>
+    <li>Home games/practices are played at C. Ian McLaren in Black Diamond.</li>
+    <li>1 game per week and 1 practice at the discretion of coach/team.</li>
+    <li> Games typically are Tuesday at 6:30pm (refer to team schedule).</li>
+    <li>Game length: 2 x 25-minute halves.</li>
+    <li>Seven players per side (7v7) with a designated keeper. Size 4 ball.</li>
+    <li><strong>Shin pads and appropriate soccer shoes are required</strong>.</li>
+    <li>Part of High Country League and follows The High Country League Code of Conduct.</li>
+    <li>Referees will be provided – coaches may also be on the field to help instruct players in the case where there is no outside referee, one coach from each team is on the field refereeing/coaching/directing players</li>
+    <li>Parents encourage from the sidelines – leave the coaching/directing to the coaches and referees</li>
+  </ul>
+ &nbsp;
+<br>
+<h2>Skills Developed in the U9 Age Group</h2>
+<ul>
+  <li>Dribbling the ball (changes of speed and direction)</li>
+  <li>Stopping the ball (bottom, inside and outside of the foot)</li>
+  <li>Passing with inside and outside of foot</li>
+  <li>Proper throw-ins</li>
+  <li>Shooting</li>
+  <li>Feints to lose a defender (will be taught at coaches’ clinic)</li>
+  <li>Shielding a ball</li>
+  <li>Crossing a soccer ball</li>
+  <li>Defending</li>
+  <li>Following rules of the game</li>
+</ul>
+<br>
+<br>
+<div class="contentInnerButton">
+<br>Register - Fee $110<br><br>
+</div>
+<br>
+</div></div></div>
+
+<div class="wrap-collabsible"> <input id="collapsible4" class="toggle" type="checkbox"> <label for="collapsible4" class="lbl-toggle">U11</label><div class="collapsible-content"><div class="content-inner">
+  <ul>
+    <p><em>U-11 is for players born in
+
+      <script>document.write(new Date().getFullYear()-11);</script>
+
+      and <script>document.write(new Date().getFullYear()-10);</script>.</em></p>
+    <br>
+    <li>Runs from the end of April to the third week of June. Practices may commence earlier</li>
+    <li><strong>TRAVEL IS REQUIRED</strong>. (Including Vulcan, Nanton, Red Deer Lake, High River, Millarville, &amp; Okotoks)</li>
+    <li>Home games/practices are played at C. Ian McLaren in Black Diamond.</li>
+    <li>1 game per week and 1 practice at the discretion of coach/team.</li>
+    <li> Games typically are Tuesday at 6:30pm (refer to team schedule).</li>
+    <li>Game length: 2 x 25-minute halves.</li>
+    <li>Seven players per side (7v7) with a designated keeper. Size 4 ball.</li>
+    <li><strong>Shin pads and appropriate soccer shoes are required</strong>.</li>
+    <li>Part of High Country League and follows The High Country League Code of Conduct.</li>
+    <li>Referees will be provided – coaches may also be on the field to help instruct players in the case where there is no outside referee, one coach from each team is on the field refereeing/coaching/directing players</li>
+    <li>Parents encourage from the sidelines – leave the coaching/directing to the coaches and referees</li>
+  </ul>
+ &nbsp;
+<br>
+<h2>Skills Developed in the U9 Age Group</h2>
+<ul>
+  <li>Dribbling the ball (changes of speed and direction)</li>
+  <li>Stopping the ball (bottom, inside and outside of the foot)</li>
+  <li>Passing with inside and outside of foot</li>
+  <li>Proper throw-ins</li>
+  <li>Shooting</li>
+  <li>Feints to lose a defender (will be taught at coaches’ clinic)</li>
+  <li>Shielding a ball</li>
+  <li>Crossing a soccer ball</li>
+  <li>Defending</li>
+  <li>Following rules of the game</li>
+</ul>
+<br>
+<br>
+<div class="contentInnerButton">
+<br>Register - Fee $110<br><br>
+</div>
+<br>
+</div></div></div>
+
+<div class="wrap-collabsible"> <input id="collapsible5" class="toggle" type="checkbox"> <label for="collapsible5" class="lbl-toggle">U13</label><div class="collapsible-content"><div class="content-inner">
+  <ul>
+    <p><em>U-13 is for players born in
+
+      <script>document.write(new Date().getFullYear()-13);</script>
+
+      and <script>document.write(new Date().getFullYear()-12);</script>.</em></p>
+    <br>
+    <li>Runs from the end of April to the third week of June. Practices may commence earlier</li>
+    <li><strong>TRAVEL IS REQUIRED</strong>. (Including Vulcan, Nanton, Red Deer Lake, High River, Millarville, &amp; Okotoks)</li>
+    <li>Home games/practices are played at C. Ian McLaren in Black Diamond.</li>
+    <li>1 game per week and 1 practice at the discretion of coach/team.</li>
+    <li> Games typically are Tuesday at 6:30pm (refer to team schedule).</li>
+    <li>Game length: 2 x 25-minute halves.</li>
+    <li>Seven players per side (7v7) with a designated keeper. Size 4 ball.</li>
+    <li><strong>Shin pads and appropriate soccer shoes are required</strong>.</li>
+    <li>Part of High Country League and follows The High Country League Code of Conduct.</li>
+    <li>Referees will be provided – coaches may also be on the field to help instruct players in the case where there is no outside referee, one coach from each team is on the field refereeing/coaching/directing players</li>
+    <li>Parents encourage from the sidelines – leave the coaching/directing to the coaches and referees</li>
+  </ul>
+ &nbsp;
+<br>
+<h2>Skills Developed in the U9 Age Group</h2>
+<ul>
+  <li>Dribbling the ball (changes of speed and direction)</li>
+  <li>Stopping the ball (bottom, inside and outside of the foot)</li>
+  <li>Passing with inside and outside of foot</li>
+  <li>Proper throw-ins</li>
+  <li>Shooting</li>
+  <li>Feints to lose a defender (will be taught at coaches’ clinic)</li>
+  <li>Shielding a ball</li>
+  <li>Crossing a soccer ball</li>
+  <li>Defending</li>
+  <li>Following rules of the game</li>
+</ul>
+<br>
+<br>
+<div class="contentInnerButton">
+<br>Register - Fee $110<br><br>
+</div>
+<br>
+</div></div></div>
+
+<div class="wrap-collabsible"> <input id="collapsible6" class="toggle" type="checkbox"> <label for="collapsible6" class="lbl-toggle">U17/15</label><div class="collapsible-content"><div class="content-inner">
+  <ul>
+    <p><em>U-17/15 is for players born in
+
+      <script>document.write(new Date().getFullYear()-17);</script>
+
+      to <script>document.write(new Date().getFullYear()-14);</script>.</em></p>
+    <br>
+    <li>Runs from the end of April to the third week of June. Practices may commence earlier</li>
+    <li><strong>TRAVEL IS REQUIRED</strong>. (Including Vulcan, Nanton, Red Deer Lake, High River, Millarville, &amp; Okotoks)</li>
+    <li>Home games/practices are played at C. Ian McLaren in Black Diamond.</li>
+    <li>1 game per week and 1 practice at the discretion of coach/team.</li>
+    <li> Games typically are Tuesday at 6:30pm (refer to team schedule).</li>
+    <li>Game length: 2 x 25-minute halves.</li>
+    <li>Seven players per side (7v7) with a designated keeper. Size 4 ball.</li>
+    <li><strong>Shin pads and appropriate soccer shoes are required</strong>.</li>
+    <li>Part of High Country League and follows The High Country League Code of Conduct.</li>
+    <li>Referees will be provided – coaches may also be on the field to help instruct players in the case where there is no outside referee, one coach from each team is on the field refereeing/coaching/directing players</li>
+    <li>Parents encourage from the sidelines – leave the coaching/directing to the coaches and referees</li>
+  </ul>
+ &nbsp;
+<br>
+<h2>Skills Developed in the U9 Age Group</h2>
+<ul>
+  <li>Dribbling the ball (changes of speed and direction)</li>
+  <li>Stopping the ball (bottom, inside and outside of the foot)</li>
+  <li>Passing with inside and outside of foot</li>
+  <li>Proper throw-ins</li>
+  <li>Shooting</li>
+  <li>Feints to lose a defender (will be taught at coaches’ clinic)</li>
+  <li>Shielding a ball</li>
+  <li>Crossing a soccer ball</li>
+  <li>Defending</li>
+  <li>Following rules of the game</li>
+</ul>
+<br>
+<br>
+<div class="contentInnerButton">
+<br>Register - Fee $110<br><br>
+</div>
+<br>
+</div></div></div>
+
+
+</div>
+
+
+
+
+</div>
+
+
+<div class="rightMenu">
+  <h3 class="rightMenuHeading"><a href="">Contact Information</a></h3>
+  <h3 class="rightMenuHeading"><a href="">Financial Assistance</a></h3>
+  <h3 class="rightMenuHeading"><a href="">Policies and Bylaws</a></h3>
+
+</div>
+
+
+
+
+
+</body>
+
+
+
+
+</html>
